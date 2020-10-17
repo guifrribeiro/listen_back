@@ -4,13 +4,17 @@ module.exports = {
   async store (request, response) {
     const { email } = request.body
 
-    let user = await User.findOne({ email })
+    try {
+      let user = await User.findOne({ email })
 
-    if (!user) {
-      user = await User.create({ email })
+      if (!user) {
+        user = await User.create({ email })
+      }
+
+      return response.json(user)
+    } catch (error) {
+      return response.json({ 'Several error ': error})
     }
-
-    return response.json(user)
   },
 
   async teste (request, response) {
