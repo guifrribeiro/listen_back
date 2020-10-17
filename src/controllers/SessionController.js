@@ -11,5 +11,9 @@ module.exports = {
     }
 
     return response.json(user)
+  },
+
+  async teste (request, response) {
+    return response.json({message: 'Realizando teste de hospedagem Heroku'})
   }
 }
