@@ -3,7 +3,8 @@ const User = require('../models/User')
 
 module.exports = {
   async index (request, response) {
-    const accounts = await Account.find({})
+    const { user_id } = request.headers
+    const accounts = await Account.find({ user: user_id })
 
     return response.json(accounts)
   },
