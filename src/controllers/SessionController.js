@@ -7,7 +7,7 @@ module.exports = {
     let user = await User.findOne({ email })
 
     if (!user) {
-      return response.status(401).json({ error: 'User was not founded!' })
+      user = await User.create({ email })
     }
 
     return response.json(user)
