@@ -8,9 +8,6 @@ const AccountSchema = new mongoose.Schema({
   notifyInsert: Boolean,
   currentBalance: Number,
   initialBalance: Number,
-  // expenses: Number,
-  // revenues: Number,
-  // transfers: Number,
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'

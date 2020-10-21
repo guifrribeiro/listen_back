@@ -15,9 +15,5 @@ module.exports = {
     } catch (error) {
       return response.json({ 'Several error ': error})
     }
-  },
-
-  async teste (request, response) {
-    return response.json({message: 'Realizando teste de hospedagem Heroku'})
   }
 }
