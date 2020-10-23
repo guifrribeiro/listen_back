@@ -8,6 +8,7 @@ const app = express()
 mongoose.connect('mongodb+srv://listen:OUunuZl4fhVOQOct@cluster0.0dnsc.gcp.mongodb.net/lst00001?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  useFindAndModify: false,
 })
 
 app.use(cors())

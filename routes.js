@@ -17,6 +17,7 @@ routes.post('/accounts', AccountController.store)
 // Categories routes
 routes.get('/categories', CategoryController.index)
 routes.post('/categories', CategoryController.store)
+routes.put('/categories/:category_id', CategoryController.update)
 
 // SubCategories routes
 routes.get('/subcategories', SubCategoryController.index)
