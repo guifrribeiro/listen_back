@@ -5,6 +5,8 @@ const AccountController = require('./src/controllers/AccountController')
 const CategoryController = require('./src/controllers/CategoryController')
 const SubCategoryController = require('./src/controllers/SubCategoryController')
 const TagController = require('./src/controllers/TagController')
+const TransactionController = require('./src/controllers/TransactionController')
+const AccountsTypeController = require('./src/controllers/AccountsTypeController')
 
 const routes = express.Router()
 
@@ -28,5 +30,13 @@ routes.post('/subcategories', SubCategoryController.store)
 routes.get('/tags', TagController.index)
 routes.post('/tags', TagController.store)
 routes.put('/tags/:tag_id', TagController.update)
+
+// Transactios routes
+routes.get('/transactions', TransactionController.index)
+routes.post('/transactions', TransactionController.store)
+
+// AccountsTypes routes
+routes.get('/accountstypes', AccountsTypeController.index)
+routes.post('/accountstypes', AccountsTypeController.store)
 
 module.exports = routes

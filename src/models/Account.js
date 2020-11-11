@@ -1,8 +1,15 @@
 const mongoose = require('mongoose')
 
 const AccountSchema = new mongoose.Schema({
-  name: String,
-  // type: String,
+  description: String,
+  type: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'AccountsType'
+  },
+  // bankInst: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: 'BankingInstitution'
+  // },
   color: String,
   incDash: Boolean,
   notifyInsert: Boolean,
