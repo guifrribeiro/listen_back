@@ -45,6 +45,6 @@ module.exports = {
       initialBalance,
     })
 
-    return response.json(account)
+    return response.status(201).json(account)
   }
 }
