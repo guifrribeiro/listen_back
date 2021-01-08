@@ -24,7 +24,7 @@ module.exports = {
       description,
     })
 
-    return response.json(tag)
+    return response.status(201).json(tag)
   },
 
   async update (request, response) {
