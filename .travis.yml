@@ -8,7 +8,7 @@ install:
   - npm install
 script:
   - echo Running Eslint in main path
-  - npm run eslint-scr
+  - npm run eslint-src
   - echo Running Eslint in tests
   - npm run eslint-test
   - echo Testing controllers
