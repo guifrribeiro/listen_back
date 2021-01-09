@@ -7,5 +7,9 @@ cache:
 install:
   - npm install
 script:
-  - echo "Testing controllers"
+  - echo Running Eslint in main path
+  - npm run eslint-script
+  - echo Running Eslint in tests
+  - npm run eslint-test
+  - echo Testing controllers
   - npm run test-controllers

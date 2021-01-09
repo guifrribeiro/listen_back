@@ -1,6 +1,6 @@
 const Transaction = require('../models/Transaction')
 const Category = require('../models/Category')
-const SubCategory = require('../models/SubCategory')
+// const SubCategory = require('../models/SubCategory')
 const Account = require('../models/Account')
 const User = require('../models/User')
 
