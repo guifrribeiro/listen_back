@@ -4,8 +4,6 @@ const subSet = require('chai-subset')
 
 const app = require('../../app')
 
-const TagController = require('../../src/controllers/TagController')
-
 chai.use(http)
 chai.use(subSet)
 
