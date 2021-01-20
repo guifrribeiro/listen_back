@@ -11,7 +11,7 @@ module.exports = {
       password } = request.body
 
     try {
-      cryPass = pass.generatePass(password)
+      let cryPass = pass.generatePass(password)
       let user = await User.findOne({ email })
 
       if (!user) {

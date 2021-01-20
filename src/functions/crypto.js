@@ -9,7 +9,7 @@ function generateSalt (length) {
 function sha512 (pass, salt) {
   var hash = crypto.createHmac('sha512', salt)
   hash.update(pass)
-  var hash = hash.digest('hex')
+  hash = hash.digest('hex')
 
   return { salt, hash }
 }
