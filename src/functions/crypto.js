@@ -20,4 +20,4 @@ function generatePass (pass) {
   return sha512(pass, salt)
 }
 
-module.exports = { generatePass }
+module.exports = { generatePass, sha512 }

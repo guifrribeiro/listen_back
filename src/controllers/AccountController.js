@@ -4,13 +4,14 @@ const User = require('../models/User')
 
 module.exports = {
   async index (request, response) {
-    const { user_id } = request.headers
-    const accounts = await Account.find({ user: user_id })
+    const userId = request.userId
+    const accounts = await Account.find({ user: userId })
 
     return response.json(accounts)
   },
 
   async store (request, response) {
+    const userId = request.userId
     const { 
       name,
       color,
@@ -19,9 +20,8 @@ module.exports = {
       currentBalance,
       initialBalance
     } = request.body
-    const { user_id } = request.headers
 
-    const user = await User.findById(user_id)
+    const user = await User.findById(userId)
 
     if (!user) {
       return response.status(400).json({ error: 'User does not exists '})
@@ -35,7 +35,7 @@ module.exports = {
     }
 
     const account = await Account.create({
-      user: user_id,
+      user: userId,
       type: accountsType_id,
       name,
       color,

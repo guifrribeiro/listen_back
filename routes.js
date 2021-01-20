@@ -7,36 +7,38 @@ const SubCategoryController = require('./src/controllers/SubCategoryController')
 const TagController = require('./src/controllers/TagController')
 const TransactionController = require('./src/controllers/TransactionController')
 const AccountsTypeController = require('./src/controllers/AccountsTypeController')
+const myJwt = require('./src/functions/jwt')
 
 const routes = express.Router()
 
 // Sessions routes
 routes.post('/sessions', SessionController.store)
+routes.post('/auth', SessionController.authentication)
 
 // Accounts routes
-routes.get('/accounts', AccountController.index)
-routes.post('/accounts', AccountController.store)
+routes.get('/accounts', myJwt.verifyJWT, AccountController.index)
+routes.post('/accounts', myJwt.verifyJWT, AccountController.store)
 
 // Categories routes
-routes.get('/categories', CategoryController.index)
-routes.post('/categories', CategoryController.store)
-routes.put('/categories/:category_id', CategoryController.update)
+routes.get('/categories', myJwt.verifyJWT, CategoryController.index)
+routes.post('/categories', myJwt.verifyJWT, CategoryController.store)
+routes.put('/categories/:category_id', myJwt.verifyJWT, CategoryController.update)
 
 // SubCategories routes
-routes.get('/subcategories', SubCategoryController.index)
-routes.post('/subcategories', SubCategoryController.store)
+routes.get('/subcategories', myJwt.verifyJWT, SubCategoryController.index)
+routes.post('/subcategories', myJwt.verifyJWT, SubCategoryController.store)
 
 // Tags routes
-routes.get('/tags', TagController.index)
-routes.post('/tags', TagController.store)
-routes.put('/tags/:tag_id', TagController.update)
+routes.get('/tags', myJwt.verifyJWT, TagController.index)
+routes.post('/tags', myJwt.verifyJWT, TagController.store)
+routes.put('/tags/:tag_id', myJwt.verifyJWT, TagController.update)
 
 // Transactios routes
-routes.get('/transactions', TransactionController.index)
-routes.post('/transactions', TransactionController.store)
+routes.get('/transactions', myJwt.verifyJWT, TransactionController.index)
+routes.post('/transactions', myJwt.verifyJWT, TransactionController.store)
 
 // AccountsTypes routes
-routes.get('/accountstypes', AccountsTypeController.index)
-routes.post('/accountstypes', AccountsTypeController.store)
+routes.get('/accountstypes', myJwt.verifyJWT, AccountsTypeController.index)
+routes.post('/accountstypes', myJwt.verifyJWT, AccountsTypeController.store)
 
 module.exports = routes
