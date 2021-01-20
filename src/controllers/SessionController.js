@@ -3,6 +3,7 @@ const pass = require('../functions/crypto')
 const jwt = require('jsonwebtoken')
 
 module.exports = {
+  // Store a new user
   async store (request, response) {
     const { 
       name,
@@ -33,6 +34,7 @@ module.exports = {
     }
   },
 
+  // Authentication
   async authentication (request, response) {
     const { username, password } = request.body
 

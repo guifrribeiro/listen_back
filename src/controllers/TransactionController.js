@@ -12,7 +12,7 @@ module.exports = {
   },
 
   async store (request, response) {
-    const { user_id } = request.headers
+    const user_id = request.userId
     
     const user = await User.findById(user_id)
 

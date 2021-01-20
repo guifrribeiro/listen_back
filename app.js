@@ -6,7 +6,6 @@ const cors = require('cors')
 const routes = require('./routes')
 const swaggerUi = require('swagger-ui-express')
 const swaggerFile = require('./swagger_output.json')
-const jwt = require('jsonwebtoken')
 
 const app = express()
 
