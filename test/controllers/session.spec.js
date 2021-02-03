@@ -2,7 +2,7 @@ const chai = require('chai')
 const http = require('chai-http')
 const subSet = require('chai-subset')
 
-const app = require('../app')
+const app = require('../../app')
 
 chai.use(http)
 chai.use(subSet)
@@ -29,7 +29,7 @@ describe('Sessions tests', () => {
         name: 'Guilherme Ferreira',
         username: 'guifrribeiro',
         password: '12345678',
-	      email: 'guiferreira@hotmail.com'
+        email: 'guiferreira@hotmail.com',
       })
       .end((error, response) => {
         chai.expect(error).to.be.null
