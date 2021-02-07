@@ -52,12 +52,14 @@ module.exports = {
         const token = jwt.sign({ id }, process.env.SECRET, {
           expiresIn: 86400
         })
-        return response.status(200).json({ auth: true, token: token })
+        let userName = user.name
+        let userEmail = user.email
+        return response.status(200).json({ auth: true, user: { userName, userEmail }, token: token })
       } else {
         return response.status(401).json({ auth: false, token: null })
       }
     } catch (error) {
-      return response.json({ 'Several error ': error })
+      return response.status(500).json({ 'Several error: ': error })
     }
   }
 }
