@@ -52,8 +52,10 @@ module.exports = {
         const token = jwt.sign({ id }, process.env.SECRET, {
           expiresIn: 86400
         })
+
         let userName = user.name
         let userEmail = user.email
+
         return response.status(200).json({ auth: true, user: { userName, userEmail }, token: token })
       } else {
         return response.status(401).json({ auth: false, token: null })
