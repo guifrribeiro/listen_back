@@ -20,6 +20,6 @@ app.use(express.json())
 app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 app.use(routes)
 
-app.listen(process.env.PORT || 3000)
+app.listen(process.env.PORT || 2000)
 
 module.exports = { app }
