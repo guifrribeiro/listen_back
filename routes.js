@@ -12,6 +12,7 @@ const myJwt = require('./src/functions/jwt')
 const routes = express.Router()
 
 // Sessions routes
+routes.get('/userData', myJwt.verifyJWT, SessionController.userData)
 routes.post('/sessions', SessionController.store)
 routes.post('/auth', SessionController.authentication)
 

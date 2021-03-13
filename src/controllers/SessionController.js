@@ -63,5 +63,20 @@ module.exports = {
     } catch (error) {
       return response.status(500).json({ 'Several error: ': error })
     }
-  }
+  },
+
+  // Get user data
+  async userData(request, response) {
+    let user = await User.findById(request.userId)
+
+    if (!user) {
+      return response.status(400).json({ error: 'User does not exists '})
+    } else {
+      let name = user.name
+      let email = user.email
+      let username = user.username
+
+      return response.status(200).json({ user: { name, email, username } })
+    }
+  } 
 }
